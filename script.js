@@ -46,6 +46,7 @@ function rand(max) {
     }
   }
   
+  
   function Maze(Width, Height) {
     var mazeMap;
     var width = Width;
