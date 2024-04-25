@@ -65,6 +65,7 @@ input:focus, select:focus {
     background-repeat: no-repeat;
     background-position: 125px center;
 }
+
 #Message-Container {
     visibility: hidden;
     color: white;
