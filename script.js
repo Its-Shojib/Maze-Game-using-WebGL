@@ -3,6 +3,7 @@ function rand(max) {
   return Math.floor(Math.random() * max);
 }
 
+// Suffle the array
 function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -11,6 +12,7 @@ function shuffle(a) {
   return a;
 }
 
+// Create a 2D array representing the maze
 function changeBrightness(factor, sprite) {
   var virtCanvas = document.createElement("canvas");
   virtCanvas.width = 500;
@@ -32,11 +34,13 @@ function changeBrightness(factor, sprite) {
   return spriteOutput;
 }
 
+// Generate Congratulations Message
 function displayVictoryMess(moves) {
   document.getElementById("moves").innerHTML = "You Moved " + moves + " Steps.";
   toggleVisablity("Message-Container");
 }
 
+// Toggle Visibility of a given element
 function toggleVisablity(id) {
   if (document.getElementById(id).style.visibility == "visible") {
     document.getElementById(id).style.visibility = "hidden";
@@ -46,6 +50,7 @@ function toggleVisablity(id) {
 }
 
 
+// Generate the maze game
 function Maze(Width, Height) {
   var mazeMap;
   var width = Width;
@@ -85,6 +90,7 @@ function Maze(Width, Height) {
     return endCoord;
   };
 
+  //Size of the map
   function genMap() {
     mazeMap = new Array(height);
     for (y = 0; y < height; y++) {
@@ -102,6 +108,7 @@ function Maze(Width, Height) {
     }
   }
 
+  //Set the start and end coordinates
   function defineMaze() {
     var isComp = false;
     var move = false;
@@ -161,6 +168,7 @@ function Maze(Width, Height) {
     }
   }
 
+  // Generate the maze
   function defineStartEnd() {
     switch (rand(4)) {
       case 0:
@@ -211,6 +219,7 @@ function Maze(Width, Height) {
   defineMaze();
 }
 
+// Initialize the maze game
 function DrawMaze(Maze, ctx, cellsize, endSprite = null) {
   var map = Maze.map();
   var cellSize = cellsize;
@@ -224,6 +233,7 @@ function DrawMaze(Maze, ctx, cellsize, endSprite = null) {
     drawEndMethod();
   };
 
+  // Draw the cell with the given coordinates
   function drawCell(xCord, yCord, cell) {
     var x = xCord * cellSize;
     var y = yCord * cellSize;
@@ -254,6 +264,7 @@ function DrawMaze(Maze, ctx, cellsize, endSprite = null) {
     }
   }
 
+  // Draw the maze and the end flag
   function drawMap() {
     for (x = 0; x < map.length; x++) {
       for (y = 0; y < map[x].length; y++) {
@@ -262,6 +273,7 @@ function DrawMaze(Maze, ctx, cellsize, endSprite = null) {
     }
   }
 
+  // Draw the end flag
   function drawEndFlag() {
     var coord = Maze.endCoord();
     var gridSize = 4;
@@ -290,6 +302,7 @@ function DrawMaze(Maze, ctx, cellsize, endSprite = null) {
     }
   }
 
+  // Draw the player sprite
   function drawEndSprite() {
     var offsetLeft = cellSize / 50;
     var offsetRight = cellSize / 25;
@@ -307,6 +320,7 @@ function DrawMaze(Maze, ctx, cellsize, endSprite = null) {
     );
   }
 
+  // calculate the offset for the end sprite
   function clear() {
     var canvasSize = cellSize * map.length;
     ctx.clearRect(0, 0, canvasSize, canvasSize);
@@ -322,6 +336,7 @@ function DrawMaze(Maze, ctx, cellsize, endSprite = null) {
   drawEndMethod();
 }
 
+// Function to draw the player sprite as an image
 function Player(maze, c, _cellsize, onComplete, sprite = null) {
   var ctx = c.getContext("2d");
   var drawSprite;
@@ -361,6 +376,7 @@ function Player(maze, c, _cellsize, onComplete, sprite = null) {
     }
   }
 
+  // Update the player position and direction based on the current state of the game
   function drawSpriteImg(coord) {
     var offsetLeft = cellSize / 50;
     var offsetRight = cellSize / 25;
@@ -381,6 +397,7 @@ function Player(maze, c, _cellsize, onComplete, sprite = null) {
     }
   }
 
+  // Bind keyboard events to move the player
   function removeSprite(coord) {
     var offsetLeft = cellSize / 50;
     var offsetRight = cellSize / 25;
@@ -392,12 +409,13 @@ function Player(maze, c, _cellsize, onComplete, sprite = null) {
     );
   }
 
+  // Draw the background image with the specified coordinates
   function check(e) {
     var cell = map[cellCoords.x][cellCoords.y];
     moves++;
     switch (e.keyCode) {
       case 65:
-      case 37: // west
+      case 37: // west 
         if (cell.w == true) {
           removeSprite(cellCoords);
           cellCoords = {
@@ -493,6 +511,7 @@ function Player(maze, c, _cellsize, onComplete, sprite = null) {
   this.bindKeyDown();
 }
 
+// Function to change the brightness of an image
 var mazeCanvas = document.getElementById("mazeCanvas");
 var ctx = mazeCanvas.getContext("2d");
 var sprite;

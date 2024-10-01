@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
   <title>Maze Game</title>
   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
   <!-- Header Section for Title -->
@@ -15,8 +17,10 @@
     <h1>Maze Game</h1>
   </header>
 
+  <!-- Main Section -->
   <div id="page">
 
+    <!-- Congratulations Message -->
     <div id="Message-Container">
       <div id="message">
         <h1>Congratulations!</h1>
@@ -27,24 +31,27 @@
     </div>
 
     <br>
+    <!-- Difficulty Selection -->
     <div id="menu">
       <div class="custom-select">
         <select id="diffSelect">
-                  <option value="10">Easy</option>
-                  <option value="15">Medium</option>
-                  <option value="25">Hard</option>
-                  <option value="38">Extreme</option>                                      
-              </select>
+          <option value="10">Easy</option>
+          <option value="15">Medium</option>
+          <option value="25">Hard</option>
+          <option value="38">Extreme</option>
+        </select>
       </div>
       <input id="startMazeBtn" type="button" onclick="makeMaze()" value="Start" />
     </div>
 
+    <!-- Maze Canvas -->
     <div id="view">
       <div id="mazeContainer">
         <canvas id="mazeCanvas" class="border" height="1100" width="1100"></canvas>
       </div>
     </div>
 
+    <!-- Instructions -->
     <p id="instructions">Use arrow keys to move the key to the house!</p>
 
   </div>
@@ -55,8 +62,12 @@
   </footer>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
-  
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+
+
+  <!-- JavaScript Code for the Game -->
   <script src="./script.js"></script>
 </body>
+
 </html>
