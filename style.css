@@ -3,29 +3,29 @@
 html, body {
     width: 100vw;
     height: 100vh;
-    position: relative; /* changed from fixed to relative */
+    position: relative; 
     padding: 0;
     margin: 0;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #fff;
+    background-color: #e2e29a;
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden; /* ensures no horizontal scroll */
+    overflow-x: hidden; 
 }
 /* Style for the header */
 #header {
     text-align: center;
-    background-color: #f8f9fa;
+    background-color: #ced8e2;
     padding: 5px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
-#view {
-    margin-top: 30px;
-}
+/* #view { */
+    /* margin-top: 10px; */
+/* } */
 
 #mazeContainer {
     opacity: 0;
@@ -38,14 +38,14 @@ html, body {
     margin: auto;
     display: block;
     border: solid 2px black;
-    height: 430px; /* to match HTML size */
-    width: 430px; /* to match HTML size */
+    height: 400px; /* to match HTML size */
+    width: 400px; /* to match HTML size */
 }
 
 input, select {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.30);
-    height: 45px;
+    height: 40px;
     width: 150px;
     padding: 10px;
     border: none;
@@ -114,22 +114,22 @@ input:focus, select:focus {
 }
 
 #page #menu {
-    margin: 0px;
-    padding: 20px;
-    height: 65px;
+    /* margin-top: -30px; */
+    /* padding: 20px; */
+    height: 60px;
     box-sizing: border-box;
 }
 
 #page #menu h1 {
     margin: 0;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     font-weight: 600;
-    font-size: 3.2rem;
+    font-size: 2.2rem;
 }
 
 #page #view {
     position: absolute;
-    top: 230px;
+    top: 180px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -143,7 +143,7 @@ input:focus, select:focus {
 }
 
 #instructions {
-    margin-top: 480px;
+    margin-top: 410px;
 }
 
 
