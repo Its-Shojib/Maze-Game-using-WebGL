@@ -13,7 +13,7 @@ function shuffle(a) {
 }
 
 // Create a 2D array representing the maze
-function changeBrightness(factor, sprite) {
+function makeWebGLCanvas(factor, sprite) {
   var virtCanvas = document.createElement("canvas");
   virtCanvas.width = 500;
   virtCanvas.height = 500;
@@ -550,7 +550,7 @@ window.onload = function () {
     new Date().getTime();
   sprite.setAttribute("crossOrigin", " ");
   sprite.onload = function () {
-    sprite = changeBrightness(1.2, sprite);
+    sprite = makeWebGLCanvas(1.2, sprite);
     completeOne = true;
     console.log(completeOne);
     isComplete();
@@ -562,7 +562,7 @@ window.onload = function () {
     new Date().getTime();
   finishSprite.setAttribute("crossOrigin", " ");
   finishSprite.onload = function () {
-    finishSprite = changeBrightness(1.1, finishSprite);
+    finishSprite = makeWebGLCanvas(1.1, finishSprite);
     completeTwo = true;
     console.log(completeTwo);
     isComplete();
